@@ -16,11 +16,10 @@ def gainPopular(num: int):
     driver = webdriver.Chrome(executable_path=r"D:\材料\Softpack\脚本\chromedriver_win32\chromedriver.exe")
     driver.get("https://www.iqiyi.com/ranks1/1/0?vfrm=pcw_dianying&vfrmblk=711219_dianying_fyb&vfrmrst=711219_dianying_fyb_tag1")  # 页面
 
-    time.sleep(3)
-
     for i in range(2):
-        driver.execute_script("var a = document.documentElement.scrollTop=10000")
         time.sleep(3)
+        driver.execute_script("var a = document.documentElement.scrollTop=10000")
+
 
     movieName = driver.find_elements_by_xpath('//div[@class="rvi__tit1"]')                  # 电影名
     newlyUpDateTime = driver.find_elements_by_xpath('//span[@class="erji__meta__txt"]')     # 实时更数据更新时间
